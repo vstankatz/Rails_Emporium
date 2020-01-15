@@ -1,0 +1,10 @@
+<h1>Purchases</h1>
+<% if @purchases.any? %>
+<% @purchases.each do |purchase| %>
+<p> <%= link_to purchase.created_at, purchase_path(purchase) %></p>
+<% end %>
+<% else %>
+<p>There are no purchases yet.</p>
+<% end %>
+
+<p><%= link_to "Start a Purchase", new_purchase_path %></p>

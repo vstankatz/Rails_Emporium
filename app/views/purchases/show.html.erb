@@ -1,0 +1,15 @@
+<h1><%= @purchase.cashier %></h1>
+<h3><%= @purchase.created_at %></h3>
+<% if @purchase.food.any?%>
+<% @purchase.food.each do |key, value|%>
+<p> <%=key%>: $<%=value%></p>
+<%end%>
+<%else%>
+<p>No items in your order</p>
+<%end%>
+<p><%= link_to "Edit", edit_purchase_path(@purchase) %></p>
+<p><%= link_to "Delete", purchase_path(@purchase),
+  :data => {:confirm => "You really want to make a POINT of deleteing the sale?",
+  :method => "delete"}%></p>
+
+  <p><%= link_to "Return to Purchases", purchases_path %></p>

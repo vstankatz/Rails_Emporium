@@ -1,0 +1,12 @@
+<h1>New Purchase</h1>
+
+<%= form_for @purchase do |f|%>
+<%=f.label :cashier%>
+<%= f.text_field :cashier%>
+<%=f.label :eggs%>
+<%= check_box_tag 'purchase[food[eggs]]', '2.37'%>
+<%=f.label :milk%>
+<%= check_box_tag 'purchase[food[milk]]', '3.81'%>
+<%=f.submit%>
+
+<%end%>
